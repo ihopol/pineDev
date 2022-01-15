@@ -1,0 +1,128 @@
+.steps {
+  background-color: #f9f9f9;
+
+  @include adaptiveValue("padding-top", 60, 30);
+
+  @media (min-width: em(769)) {
+    @include adaptiveValue("padding-bottom", 60, 30);
+  }
+  // .steps__container
+  &__container {
+  }
+  // .steps__body
+  &__body {
+    text-align: center;
+  }
+  // .steps__title
+  &__title {
+    margin-bottom: math.div(30, 40) + em;
+  }
+  // .steps__subtitle
+  &__subtitle {
+    @include adaptiveValue("margin-bottom", 80, 40);
+  }
+  // .steps__row
+  &__row {
+    display: grid;
+    justify-content: center;
+    column-gap: 130px;
+    grid-template-columns: repeat(auto-fill, minmax(auto, 372px));
+
+    @media (max-width: em(450)) {
+      grid-template-columns: repeat(auto-fill, minmax(auto, 310px));
+    }
+  }
+  // .steps__column
+  &__column {
+  }
+  // .steps__btn
+  &__btn {
+    @media (max-width: em(768)) {
+      width: 100vw;
+      height: 84px;
+      margin: 0px -18px;
+    }
+  }
+}
+
+.column {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #e0e0e0;
+  border-radius: 160px;
+
+  @include adaptiveValue("padding-top", 55, 50);
+  @include adaptiveValue("padding-bottom", 55, 50);
+
+  @include adaptiveValue("margin-bottom", 80, 20);
+
+  @media (min-width: em(769)) {
+    .column__circle {
+      @include adaptiveValue("left", -50, -28);
+    }
+  }
+
+  @media (max-width: em(768)) {
+    &:nth-child(odd) {
+      .column__circle {
+        @include adaptiveValue("left", -50, -28);
+      }
+    }
+
+    &:nth-child(even) {
+      .column__circle {
+        @include adaptiveValue("right", -50, -28);
+      }
+
+      @include adaptiveValue("padding-left", 50, 0);
+      @include adaptiveValue("padding-right", 86, 50);
+    }
+  }
+
+  // .column__title
+  &__title {
+    line-height: math.div(29, 20);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: $mainBlue;
+
+    margin-bottom: 12px;
+
+    @include adaptiveValue("font-size", 20, 18);
+  }
+  // .column__text
+  &__text {
+    line-height: math.div(22, 16);
+    letter-spacing: 0.01em;
+
+    @include adaptiveValue("font-size", 16, 14);
+  }
+
+  // .column__circle
+  &__circle {
+    position: absolute;
+
+    display: block;
+    background-color: #e6ecf3;
+    border-radius: 50%;
+    font-family: "Libre Caslon Text";
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include adaptiveValue("flex-basis", 100, 80);
+    @include adaptiveValue("height", 100, 80);
+    @include adaptiveValue("width", 100, 80);
+    @include adaptiveValue("font-size", 40, 26);
+  }
+
+  // .column__info
+  &__info {
+    margin: 0 auto;
+    @include adaptiveValue("max-width", 240, 192);
+  }
+}

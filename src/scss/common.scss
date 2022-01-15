@@ -1,0 +1,148 @@
+.title {
+  font-family: "Libre Caslon Text", sans-serif;
+  color: $mainColor;
+  text-align: center;
+  line-height: math.div(49, 40);
+  @include adaptiveValue("font-size", 40, 28);
+
+  &:before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 60px;
+    margin: 0 auto 40px;
+
+    border: 1px solid #e0e0e0;
+  }
+}
+
+.subtitle {
+  font-size: 18px;
+  line-height: math.div(22, 18);
+  letter-spacing: 0.01em;
+  text-align: center;
+
+  // .subtitle__wrap
+  &__wrap {
+  }
+  // .subtitle__wrap--blue
+  &__wrap--blue {
+    color: $mainBlue;
+  }
+}
+
+.scroll-down {
+  display: none;
+
+  @media (min-width: em(927)) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    width: 100px;
+    min-height: 260px;
+
+    padding: 40px 0px 120px;
+
+    background-color: #f9f9f9;
+    color: #bdbdbd;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    writing-mode: vertical-lr;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__wrap {
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: calc(50% + 1px);
+        transform: translateX(-50%);
+
+        border: 1px solid #bdbdbd;
+        width: 1px;
+        height: 39%;
+      }
+    }
+  }
+}
+
+.btnMain {
+  min-width: 294px;
+  height: 64px;
+
+  background-color: $mainBlue;
+  border: 1px solid $mainBlue;
+  color: $mainButtons;
+
+  font-weight: 500;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 34px;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  transition: background-color 0.3s;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: #233352;
+    }
+  }
+
+  &__wrap {
+    &:after {
+      content: "";
+      display: inline-block;
+      background: url(../img/icons/arrow-btn.svg) no-repeat;
+
+      width: 60px;
+      height: 6px;
+      margin-left: 20px;
+      transform: translateY(-50%);
+
+      @media (max-width: em(768)) {
+        margin-left: 46px;
+      }
+    }
+  }
+}
+
+.btn {
+  height: 48px;
+  padding: 5px 48px;
+  min-width: 220px;
+
+  border: 1px solid $mainBlue;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $mainBlue;
+  background-color: transparent;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.3s;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: $mainBlue;
+      color: #fff;
+    }
+  }
+}
+
+.btn-helper {
+  text-align: center;
+}
