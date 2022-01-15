@@ -1,1 +1,1 @@
-[DEMO](https://junglq.github.io/pineDev/).
+[DEMO](https://junglq.github.io/pineDev/)
